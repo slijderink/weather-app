@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeatherApp</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/cfefa94c0f.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                <span class="currentData" id="currentDate">
+                    <p> </p>
+                </span>
+            </div>
+            <div class="col-3">
+                <span class="currentTime" id="time">
+                    <p>22:15</p>
+                </span>
+            </div>
+        </div>
+
+        <h2><span id="temperature"></span>
+            <span class="units">°C</span>
+            <a href="#" id="celsius-link"></a>
+            <a href="#" id="fahrenheit-link"><a ></span> <i class="fas fa-sun"></i></h2>
+        <div class="row">
+            <div class="col-7">
+                <h1 id="city"></h1>
+            </div>
+            <div class="class-5">
+                <ul>
+                    <li>
+                        <span id="description"></span>
+                    </li>
+                    <li>
+                        Humidity:<span id="humidity"></span>%
+                    </li>
+                    <li>
+                        Wind:<span id="wind"></span>km/h
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Monday</h5>
+                        <p class="card-text">
+                            22º <i class="fas fa-cloud-showers-heavy"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Tuesday</h5>
+                        <p class="card-text">
+                            20º <i class="fas fa-cloud-sun-rain"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Wednesday</h5>
+                        <p class="card-text">
+                            22º <i class="fas fa-cloud-sun-rain"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Thursday</h5>
+                        <p class="card-text">
+                            17º <i class="fas fa-cloud-sun-rain"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Friday</h5>
+                        <p class="card-text">
+                            15º <i class="fas fa-cloud-sun-rain"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Saturday</h5>
+                        <p class="card-text">
+                            17º <i class="fas fa-cloud-sun-rain"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-1 col-10">
+                <div class="enterCityForm">
+                    <form id="search-form">
+                        <div class="form-row">
+                            <div class="col-8">
+                                <input type="search" id="search-city" class="form-control"
+                                    placeholder="Enter city..." />
+                            </div>
+                            <div class="col-3">
+                                <input type="submit" value="Search" class="form-control btn btn-primary shadow-sm" />
+                            </div>
+                            <div class="col-1">
+                                <button class=clButton id=clButtonId>CL</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="cardCity" id="newYork" style="width: 100px;">
+                    <div class="cardCity-body">
+                        <i class="fas fa-globe-americas"></i>
+                        <h5>
+                            New-York
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="cardCity" id="london" style="width: 100px;">
+                    <div class="cardCity-body">
+                        <i class="fas fa-globe-europe"></i>
+                        <h5>
+                            London
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4">
+                <div class="cardCity" id="bangkok" style="width: 100px;">
+                    <div class="cardCity-body">
+                        <i class="fas fa-globe-asia"></i>
+                        <h5>
+                            Bangkok
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+        <script src="index.js"></script>
+    </div>
+    <p>Open source code by <a href="https://github.com/slijderink/weather-app">Liza Slijderink</a></p>
+</body>
+
+</html>
