@@ -1,0 +1,97 @@
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  border: solid 1px;
+  border-radius: 10px;
+}
+h1 {
+  text-align: center;
+  color: #080808;
+  font-family: "Merriweather", serif;
+  font-size: 40px;
+}
+.card-title {
+  font-size: 10px;
+  color: #111213;
+  font-family: "Merriweather", serif;
+}
+ul {
+  font-family: "Merriweather", serif;
+  list-style-type: none;
+}
+h2 {
+  font-size: 80px;
+  color: rgb(24, 23, 23);
+  text-align: center;
+  display: block;
+  margin: 25px;
+}
+.currentData,
+.currentTime {
+  color: rgb(15, 15, 15);
+  font-family: "Merriweather", serif;
+  font-weight: bold;
+  display: block;
+  font-size: 20px;
+  position: relative;
+  top: 30px;
+  margin: 15px;
+}
+
+.currentTime {
+  font-size: 20px;
+  position: relevant;
+  top: 30px;
+}
+)
+
+.card {
+  margin: 10px;
+  display: block;
+}
+h1 i {
+  font-size: 70px;
+}
+.enterCityForm {
+  margin: 20px;
+}
+
+.cardCity-body i {
+  font-size: 25px;
+}
+.cardCity-body h5 {
+  font-family: "Merriweather", serif;
+  font-size: 10px;
+}
+.cardCity {
+  margin: 10px;
+  display: block;
+  background-color: #f8f6e0;
+  border-radius: 50%;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 100ms ease-in-out;
+}
+.cardCity:hover {
+  background-color: #a8e9f5;
+}
+.units {
+  font-size: 20px;
+  position: relative;
+  top: -50px;
+}
+.clButton {
+  background-color: black;
+  color: #f8f6e0;
+  font-family: font-family: "Merriweather", serif;
+  padding:5px;
+  border-radius:10%;
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.clButton:hover{
+  background-color:#a8e9f5;;
+  color:black;
+}
