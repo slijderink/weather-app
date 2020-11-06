@@ -52,6 +52,7 @@ function displayWeather(response) {
   document.querySelector(`#temperature`).innerHTML = Math.round(
     response.data.main.temp
   );
+
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
   document.querySelector(`#wind`).innerHTML = Math.round(
     response.data.wind.speed
@@ -119,3 +120,4 @@ function showWeatherBangkok(event) {
 
 let weatherBangkok = document.querySelector(`#bangkok`);
 weatherBangkok.addEventListener("click", showWeatherBangkok);
+
