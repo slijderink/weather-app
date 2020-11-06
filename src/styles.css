@@ -1,23 +1,15 @@
-.weather-app {
-  max-width: 600px;
-  margin: 0 auto;
-  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
-  border: solid 1px;
-  border-radius: 10px;
+body {
+  font-family: "Merriweather", serif;
+}
+h1 i {
+  font-size: 70px;
 }
 h1 {
   text-align: center;
   color: #080808;
-  font-family: "Merriweather", serif;
   font-size: 40px;
 }
-.card-title {
-  font-size: 10px;
-  color: #111213;
-  font-family: "Merriweather", serif;
-}
 ul {
-  font-family: "Merriweather", serif;
   list-style-type: none;
 }
 h2 {
@@ -27,10 +19,23 @@ h2 {
   display: block;
   margin: 25px;
 }
+.weather-wrapper {
+  max-width: 600px;
+  margin: 30px;
+}
+.weather-app {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  border: solid 1px rgb(51, 3, 95);
+  border-radius: 10px;
+}
+
+.card-title {
+  font-size: 10px;
+  color: #111213;
+}
 .currentData,
 .currentTime {
   color: rgb(15, 15, 15);
-  font-family: "Merriweather", serif;
   font-weight: bold;
   display: block;
   font-size: 20px;
@@ -49,9 +54,7 @@ h2 {
   margin: 10px;
   display: block;
 }
-h1 i {
-  font-size: 70px;
-}
+
 .enterCityForm {
   margin: 20px;
 }
@@ -60,11 +63,11 @@ h1 i {
   font-size: 25px;
 }
 .cardCity-body h5 {
-  font-family: "Merriweather", serif;
   font-size: 10px;
 }
 .cardCity {
-  margin: 10px;
+  margin: 0 auto;
+  margin-bottom: 30px;
   display: block;
   background-color: #f8f6e0;
   border-radius: 50%;
@@ -79,12 +82,11 @@ h1 i {
 .units {
   font-size: 20px;
   position: relative;
-  top: -50px;
+  top: -40px;
 }
 .clButton {
   background-color: black;
   color: #f8f6e0;
-  font-family: "Merriweather", serif;
   padding: 5px;
   border-radius: 10%;
   cursor: pointer;
