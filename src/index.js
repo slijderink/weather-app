@@ -46,6 +46,7 @@ function search(city) {
   axios.get(apiUrl).then(displayWeather);
 }
 
+
 function displayWeather(response) {
   console.log(response.data.name);
   document.querySelector(`#city`).innerHTML = response.data.name;
@@ -53,6 +54,8 @@ function displayWeather(response) {
     response.data.main.temp
   );
 
+  celsiusTemperature = response.data.main.temp;
+  
   document.querySelector(`#humidity`).innerHTML = response.data.main.humidity;
   document.querySelector(`#wind`).innerHTML = Math.round(
     response.data.wind.speed
@@ -65,11 +68,14 @@ function displayWeather(response) {
 
 }
 
+
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-city").value;
   search(city);
 }
+
+let celsiusTemperature=null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
@@ -121,3 +127,20 @@ function showWeatherBangkok(event) {
 let weatherBangkok = document.querySelector(`#bangkok`);
 weatherBangkok.addEventListener("click", showWeatherBangkok);
 
+function displayFahrenheitTemp(event){
+  event.preventDefault();
+  let fahrenheitTemperature=(celsiusTemperature*9)/5+32;
+  let temperatureElement=document.querySelector(`#temperature`)
+  temperatureElement.innerHTML=Math.round(fahrenheitTemperature);
+}
+
+function displayCelsiusTemp(event){
+  event.preventDefault();
+  let temperatureElement=document.querySelector(`#temperature`)
+  temperatureElement.innerHTML=Math.round(celsiusTemperature);
+}
+let fahrenheitLink=document.querySelector(`#fahrenheit-link`)
+fahrenheitLink.addEventListener(`click`,displayFahrenheitTemp);
+
+let celsiusLink=document.querySelector(`#celsius-link`)
+celsiusLink.addEventListener(`click`,displayCelsiusTemp);
