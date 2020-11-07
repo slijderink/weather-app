@@ -27,8 +27,8 @@ h2 {
   margin: 30px;
 }
 .weather-app {
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  border: solid 1px rgb(51, 3, 95);
+  background-color: #dae4dd;
+  border: solid 1px #555555;
   border-radius: 10px;
 }
 
@@ -47,17 +47,12 @@ h2 {
   margin: 15px;
 }
 
-.currentTime {
-  font-size: 20px;
-  position: relevant;
-  top: 30px;
-}
-
 .card {
   margin: 0 auto;
   margin-bottom: 5px;
   display: block;
-  background-color: #e2d9f8;
+  background-color: #fbf7f0;
+  border: solid 1px #555555;
 }
 
 .enterCityForm {
@@ -74,15 +69,16 @@ h2 {
   margin: 0 auto;
   margin-bottom: 30px;
   display: block;
-  background-color: #f6fce5;
+  background-color: #cdc9c4;
   border-radius: 50%;
   text-align: center;
   padding: 20px;
   cursor: pointer;
   transition: all 100ms ease-in-out;
+  border: solid 1px #555555;
 }
 .cardCity:hover {
-  background-color: #fdffff;
+  background-color: #fbf7f0;
 }
 .units {
   font-size: 20px;
@@ -99,18 +95,18 @@ h2 {
 }
 
 .clButton:hover {
-  background-color: #fdffff;
+  background-color: #fbf7f0;
   color: black;
 }
 
 .btn-primary {
-  background-color: #faa6c6;
-  border-color: #faa6c6;
-  color: #fdffff;
+  background-color: #555555;
+  border-color: #555555;
+  color: #fbf7f0;
 }
 
 .btn-primary:hover {
-  background-color: #fdffff;
-  border-color: #fdffff;
-  color: black;
+  background-color: #fbf7f0;
+  background-color: #fbf7f0;
+  color: #555555;
 }
