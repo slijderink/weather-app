@@ -44,6 +44,27 @@ function search(city) {
   let apiKey = "70b07e42ffc1c269025339e21e7eedec";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
+
+  apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response){
+  let forecastElement=document.querySelector("#forecast");
+  let forecast=response.data.list[0];
+  console.log(forecast);
+  forecastElement.innerHTML=`
+  <div class="col-4">
+                <div class="card" style="width: 100px;">
+                    <div class="card-body">
+                        <h5 class="card-title">º</h5>
+                        <p class="card-text">
+                            ${Math.round(forecast.main.temp_max)} ${forecast.weather[0].icon}
+                        </p>
+                    </div>
+                </div>
+    </div>`
+
 }
 
 function displayWeather(response) {
@@ -147,3 +168,5 @@ fahrenheitLink.addEventListener(`click`,displayFahrenheitTemp);
 
 let celsiusLink=document.querySelector(`#celsius-link`)
 celsiusLink.addEventListener(`click`,displayCelsiusTemp);
+
+
