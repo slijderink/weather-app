@@ -45,14 +45,15 @@ function search(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeather);
 
-  apiUrl=`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response){
+  console.log(response.data.list[0]);
   let forecastElement=document.querySelector("#forecast");
-  let forecast=response.data.list[0];
-  console.log(forecast);
+  let forecast=response.data.list;
+
   forecastElement.innerHTML=`
   <div class="col-4">
                 <div class="card" style="width: 100px;">
@@ -62,7 +63,7 @@ function displayForecast(response){
                             ${Math.round(forecast.main.temp_max)} ${forecast.weather[0].icon}
                         </p>
                     </div>
-                </div>
+            </div>
     </div>`
 
 }
