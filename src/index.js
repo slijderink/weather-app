@@ -40,33 +40,35 @@ let currentMonth = months[currentTime.getMonth()];
 let currentDate = currentTime.getDate();
 currentDateApp.innerHTML = `${days[dayIndex]} ${currentMonth} ${currentDate}`;
 
-function search(city) {
-  let apiKey = "70b07e42ffc1c269025339e21e7eedec";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-
-   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
 
 function displayForecast(response){
-  console.log(response.data.list[0]);
-  let forecastElement=document.querySelector("#forecast");
   let forecast=response.data.list;
-
+  let forecastElement=document.querySelector("#forecast");
   forecastElement.innerHTML=`
   <div class="col-4">
                 <div class="card" style="width: 100px;">
                     <div class="card-body">
                         <h5 class="card-title">º</h5>
-                        <p class="card-text">
-                            ${Math.round(forecast.main.temp_max)} ${forecast.weather[0].icon}
-                        </p>
+                        <img src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
                     </div>
             </div>
     </div>`
 
 }
+
+function search(city) {
+  let apiKey = "70b07e42ffc1c269025339e21e7eedec";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric;
+  axios.get(apiUrl).then(displayForecast);`
+}
+
+
 
 function displayWeather(response) {
   console.log(response.data.name);
