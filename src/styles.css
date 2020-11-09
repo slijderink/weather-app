@@ -25,6 +25,8 @@ h2 {
 .weather-wrapper {
   max-width: 600px;
   margin: 30px;
+  position: relative;
+  left: 215px;
 }
 .weather-app {
   background-color: #dae4dd;
@@ -45,6 +47,10 @@ h2 {
   position: relative;
   top: 30px;
   margin: 15px;
+}
+.currentData {
+  position: relative;
+  left: 40px;
 }
 
 .card {
@@ -109,4 +115,13 @@ h2 {
   background-color: #fbf7f0;
   background-color: #fbf7f0;
   color: #555555;
+}
+
+.units .active {
+  color: #080808;
+  cursor: default;
+}
+
+.units .active:hover {
+  text-decoration: none;
 }
