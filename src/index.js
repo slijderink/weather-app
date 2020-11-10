@@ -1,13 +1,5 @@
 function formatDate(timestamp){
   let date=new Date(timestamp);
-  let hours=date.getHours();
-  if(hours<10){
-    hours=`0${hours}`;
-  }
-  let minutes=date.getMinutes();
-   if(minutes<10){
-    minutes=`0${minutes}`;
-  }
   let days = [
   "Sunday",
   "Monday",
@@ -18,17 +10,17 @@ function formatDate(timestamp){
   "Saturday"
 ];
   let day=days[date.getDay()];
-  return `${day} ${hours}:${minutes}`;
-
+  return `${day} ${formatHours(timestamp)}`;
 }
 
-function formatHours(timestap){
+function formatHours(timestamp){
   let date=new Date(timestamp);
   let hours=date.getHours();
-  if (hours < 10) {
-  hours = `0${hours}`}
+  if(hours<10){
+    hours=`0${hours}`;
+  }
   let minutes=date.getMinutes();
-  if(minutes<10){
+   if(minutes<10){
     minutes=`0${minutes}`;
   }
 return `${hours}:${minutes}`
@@ -36,8 +28,12 @@ return `${hours}:${minutes}`
 
 function displayForecast(response){
   let forecastElement=document.querySelector("#forecast");
-  let forecast=response.data.list[0];
-  forecastElement.innerHTML=`
+  forecastElement.innerHTML=null;
+  let forecast=null;
+
+  for(let index=0; index<6; index++){
+    let forecast=response.data.list[index];
+    forecastElement.innerHTML+=`
   <div class="col-4">
             <div class="card" style="width: 100px;">
               <div class="card-body">
@@ -50,8 +46,10 @@ function displayForecast(response){
                 </p>
               </div>
             </div>
-          </div>`
+          </div>`;
+  }
 }
+
 function search(city) {
   let apiKey = "70b07e42ffc1c269025339e21e7eedec";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -84,7 +82,6 @@ function displayWeather(response) {
 
 }
 
-
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-city").value;
@@ -110,38 +107,6 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector(`#clButtonId`);
 currentLocationButton.addEventListener("click", getCurrentLocation);
 search("Amsterdam");
-
-function showWeatherNewYork(event) {
-  let apiKey = "70b07e42ffc1c269025339e21e7eedec";
-  let city = `New York`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
-&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-let weatherNewYork = document.querySelector(`#newYork`);
-weatherNewYork.addEventListener("click", showWeatherNewYork);
-
-function showWeatherLondon(event) {
-  let apiKey = "70b07e42ffc1c269025339e21e7eedec";
-  let city = `London`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
-&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-
-let weatherLondon = document.querySelector(`#london`);
-weatherLondon.addEventListener("click", showWeatherLondon);
-
-function showWeatherBangkok(event) {
-  let apiKey = "70b07e42ffc1c269025339e21e7eedec";
-  let city = `Bangkok`;
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}
-&units=metric`;
-  axios.get(apiUrl).then(displayWeather);
-}
-
-let weatherBangkok = document.querySelector(`#bangkok`);
-weatherBangkok.addEventListener("click", showWeatherBangkok);
 
 function displayFahrenheitTemp(event){
   event.preventDefault();
