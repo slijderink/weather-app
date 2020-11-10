@@ -20,24 +20,19 @@ h2 {
   margin: 25px;
 }
 
-.lastUpdate ,
-.currentTime{
+.lastUpdate,
+.currentTime {
   color: rgb(15, 15, 15);
   display: block;
-  font-size: 20px;
+  font-size: 15px;
   position: relative;
   top: 30px;
-  margin: 15px;
 }
-.lastUpdate {
-  position:relative;
-  left:50px;
-}
-  .currentTime{
-    position:relative;
-    right:10px;
-  }
 
+.lastUpdate {
+  position: relative;
+  left: 40px;
+}
 .icon {
   width: 100px;
 }
@@ -56,21 +51,21 @@ h2 {
 .card-title {
   font-size: 10px;
   color: #111213;
-}
-
+  text-align: center;
 }
 
 .card {
   margin: 0 auto;
-  margin-bottom: 5px;
-  display: block;
-  background-color: #cdc9c4;
-  border: solid 1px #fbf7f0;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  background-color: #cdc9c3;
+  border: solid 1px #555555;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .enterCityForm {
   margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .units {
@@ -111,5 +106,6 @@ h2 {
 }
 
 p img {
-  width: 35px;
+  width: 40px;
+  text-align: center;
 }
