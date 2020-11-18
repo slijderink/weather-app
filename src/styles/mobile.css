@@ -1,0 +1,36 @@
+@media screen and (max-width: 450px) {
+  .container {
+    padding: 0;
+  }
+  .weather-wrapper {
+    max-width: unset;
+    margin: 0;
+    left: unset;
+  }
+  #forecast {
+    justify-content: center;
+  }
+  .row {
+    margin: 0;
+  }
+  .row .col-4 {
+    padding: 0;
+    flex: 0 0 29.333333%;
+    max-width: 29.333333%;
+  }
+  .weather-app {
+    border-radius: 0;
+    padding: 0 10 0 10;
+  }
+  .col-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 37%;
+    max-width: 37%;
+  }
+  .form-row {
+    flex-wrap: nowrap;
+  }
+  .offset-1 {
+    margin-left: 0;
+  }
+}
